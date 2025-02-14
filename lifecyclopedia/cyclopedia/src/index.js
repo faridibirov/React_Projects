@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Layout/Header";
-import CyclOPediaClassPage from "./CyclOPediaCalssPage";
+import CyclOPediaClassPage from "./CyclOPediaClassPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
