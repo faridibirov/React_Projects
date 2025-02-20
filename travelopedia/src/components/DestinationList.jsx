@@ -1,5 +1,6 @@
 import React from "react";
 import { useGetAllDestinationQuery } from "../api/destinationApi";
+import Destination from "./Destination";
 
 function DestinationList() {
   const { data, isLoading, isSuccess, isError, error } =
@@ -11,14 +12,10 @@ function DestinationList() {
   } else if (isSuccess) {
     content = data.map((destination) => {
       return (
-        <article key={destination.id}>
-          <div className="text-center text-info p-2">
-            <div>
-              {destination.city}, {destination.country} -{" "}
-              {destination.daysNeeded} days
-            </div>
-          </div>
-        </article>
+        <Destination
+          destination={destination}
+          key={destination.id}
+        ></Destination>
       );
     });
   } else if (isError) {

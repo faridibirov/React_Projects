@@ -2,15 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Layout/Header";
 import DestinationIndex from "./components/DestinationIndex";
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
-import { destinationAPI } from "./api/destinationApi";
+import { Provider } from "react-redux";
+import { store } from "./Redux/store";
+import RandomDestination from "./components/RandomDestination";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ApiProvider api={destinationAPI}>
+    <Provider store={store}>
       <Header />
       <DestinationIndex />
-    </ApiProvider>
+      <RandomDestination />
+    </Provider>
   </React.StrictMode>
 );
